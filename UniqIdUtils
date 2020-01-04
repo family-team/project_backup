@@ -3,7 +3,7 @@ public class TestF {
     static Set<Long> set = Collections.newSetFromMap(new ConcurrentHashMap<Long, Boolean>());
     public static void main(String[] args) {
         for (int i=0;i<1000;i++){
-            ExecutorServices.REALTIME_EXECUTOR.execute(()->{
+            Executors.execute(()->{
                 for (int j=0;j<10000;j++) {
                     long num = uniqId();
                     if (set.contains(num)) {
